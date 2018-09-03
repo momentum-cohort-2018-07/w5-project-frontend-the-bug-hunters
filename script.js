@@ -1,5 +1,6 @@
 let runningScore = 0
 
+
 document.getElementById('question1').addEventListener('submit', function (e) {
   e.preventDefault()
   e.target.classList.add('hidden')
@@ -113,6 +114,7 @@ document.getElementById('question10').addEventListener('submit', function (e) {
   console.log(runningScore, typeof runningScore)
 
   document.getElementById('results').innerText = ending(runningScore)
+  document.getElementById('results-pic').innerHTML = endingPhoto(runningScore)
 
   document.getElementById('answers-page').classList.remove('hidden')
 })
@@ -132,3 +134,16 @@ function ending (score) {
     return 'you are a strong shot of espresso'
   }
 }
+
+function endingPhoto (score) {
+  if (score <= 40 && score > 30) {
+    return "<img src='/coffee_pics/nitro_coldbrew.jpg'>"
+  } else if (score <= 30 && score > 20) {
+    return "<img src='/coffee_pics/mocha.jpg'>"
+  } else if (score <= 20 && score > 10) {
+    return "<img src='/coffee_pics/diner_coffee.jpg'>"
+  } else {
+    return "<img src='/coffee_pics/espresso.jpg'>"
+  }
+}
+
