@@ -17,3 +17,51 @@
 .hidden {
   display: none; 
 }
+
+html {
+  background-color: #E0FFF5;
+ }
+ 
+ body {
+  background-color: #6D4C3D;
+  margin: 0 auto;
+  color: #EFD6D2;
+  width: 100%;
+  text-align: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+ 
+ }
+ 
+ #header {
+  background-color: #C1B098;
+  font: oblique bold 35px Georgia;
+  color: #6D4C3D;
+  margin-bottom: 0;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+ }
+ 
+ form {
+  background-color: #6D4C3D;
+  color: #EFD6D2;
+  padding: 10px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+ }
+ 
+ p {
+  font-size: 30px;
+ }
+ 
+ #results {
+  background-color: #6D4C3D;
+  margin: auto;
+  color: #EFD6D2;
+  width: 80%;
+  text-align: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+ }
+ 
+ #results-pic {
+  object-fit: cover;
+ }
