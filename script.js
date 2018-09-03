@@ -123,12 +123,12 @@ document.getElementById('start-over').addEventListener('click', function () {
 
 function ending (score) {
   if (score <= 40 && score > 30) {
-    return 'you like d'
+    return 'you are a nitro cold brew!'
   } else if (score <= 30 && score > 20) {
-    return 'you like c'
+    return "you're a mocha, baby!"
   } else if (score <= 20 && score > 10) {
-    return 'you like b'
+    return "you are a good 'ol diner coffee"
   } else {
-    return 'you like a'
+    return 'you are a strong shot of espresso'
   }
 }
