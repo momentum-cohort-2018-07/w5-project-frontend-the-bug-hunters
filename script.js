@@ -26,6 +26,7 @@ function setupQuestion (id, isLastQuestion = false) {
 }
 
 function showQuestion (questionId) {
+  // Guard to make sure all other questions are hidden.
   for (let el of document.getElementsByClassName('question')) {
     el.classList.add('hidden')
   }
