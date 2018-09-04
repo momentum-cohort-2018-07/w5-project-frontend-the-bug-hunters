@@ -25,15 +25,9 @@ function setupQuestion (id, isLastQuestion = false) {
   })
 }
 
-setupQuestion(1)
-setupQuestion(2)
-setupQuestion(3)
-setupQuestion(4)
-setupQuestion(5)
-setupQuestion(6)
-setupQuestion(7)
-setupQuestion(8)
-setupQuestion(9)
+for (let i = 1; i < 10; i++) {
+  setupQuestion(i)
+}
 setupQuestion(10, true)
 
 document.getElementById('start-over').addEventListener('click', function () {
