@@ -1,10 +1,14 @@
 let runningScore = 0
 
-function setupQuestion (currentQuestionId, inputName, nextQuestionId) {
+function setupQuestion (id, isLastQuestion = false) {
+  const currentQuestionId = `question${id}`
+  const inputName = `selection-set${id}`
+  const nextQuestionId = isLastQuestion ? null : `question${id + 1}`
+
   document.getElementById(currentQuestionId).addEventListener('submit', function (e) {
     e.preventDefault()
     e.target.classList.add('hidden')
-    let myAnswer = document.querySelector('input[name="' + inputName + '"]:checked').dataset.score
+    let myAnswer = document.querySelector(`input[name="${inputName}"]:checked`).dataset.score
     console.log(myAnswer)
 
     runningScore += parseInt(myAnswer, 10)
@@ -21,16 +25,16 @@ function setupQuestion (currentQuestionId, inputName, nextQuestionId) {
   })
 }
 
-setupQuestion('question1', 'selection-set1', 'question2')
-setupQuestion('question2', 'selection-set2', 'question3')
-setupQuestion('question3', 'selection-set3', 'question4')
-setupQuestion('question4', 'selection-set4', 'question5')
-setupQuestion('question5', 'selection-set5', 'question6')
-setupQuestion('question6', 'selection-set6', 'question7')
-setupQuestion('question7', 'selection-set7', 'question8')
-setupQuestion('question8', 'selection-set8', 'question9')
-setupQuestion('question9', 'selection-set9', 'question10')
-setupQuestion('question10', 'selection-set10')
+setupQuestion(1)
+setupQuestion(2)
+setupQuestion(3)
+setupQuestion(4)
+setupQuestion(5)
+setupQuestion(6)
+setupQuestion(7)
+setupQuestion(8)
+setupQuestion(9)
+setupQuestion(10, true)
 
 document.getElementById('start-over').addEventListener('click', function () {
   window.location.reload()
