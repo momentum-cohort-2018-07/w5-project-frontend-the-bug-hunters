@@ -16,7 +16,7 @@ function setupQuestion (id, isLastQuestion = false) {
     console.log(runningScore, typeof runningScore)
 
     if (nextQuestionId) {
-      document.getElementById(nextQuestionId).classList.remove('hidden')
+      showQuestion(nextQuestionId)
     } else {
       document.getElementById('results').innerText = ending(runningScore)
       document.getElementById('results-pic').innerHTML = endingPhoto(runningScore)
@@ -25,14 +25,12 @@ function setupQuestion (id, isLastQuestion = false) {
   })
 }
 
-for (let i = 1; i < 10; i++) {
-  setupQuestion(i)
+function showQuestion (questionId) {
+  for (let el of document.getElementsByClassName('question')) {
+    el.classList.add('hidden')
+  }
+  document.getElementById(questionId).classList.remove('hidden')
 }
-setupQuestion(10, true)
-
-document.getElementById('start-over').addEventListener('click', function () {
-  window.location.reload()
-})
 
 function ending (score) {
   if (score <= 40 && score > 30) {
@@ -57,3 +55,21 @@ function endingPhoto (score) {
     return "<img src='http://funkyimg.com/i/2KXck.jpg'>"
   }
 }
+
+function setup () {
+  for (let i = 1; i < 10; i++) {
+    setupQuestion(i)
+  }
+  setupQuestion(10, true)
+
+  document.getElementById('start-quiz').addEventListener('click', function () {
+    document.getElementById('start-quiz').classList.add('hidden')
+    showQuestion('question1')
+  })
+
+  document.getElementById('start-over').addEventListener('click', function () {
+    window.location.reload()
+  })
+}
+
+setup()
